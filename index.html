@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Integer Sum Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="calculator.mjs"></script>
+  </head>
+  <body>
+    <main class="calculator">
+      <h1>Sum two integers</h1>
+      <p class="intro">Enter two whole numbers to add them.</p>
+
+      <form id="calculator-form" novalidate>
+        <label for="first-number">First integer</label>
+        <input id="first-number" name="first" type="text" inputmode="numeric" autocomplete="off" required />
+
+        <label for="second-number">Second integer</label>
+        <input id="second-number" name="second" type="text" inputmode="numeric" autocomplete="off" required />
+
+        <button type="submit">Calculate sum</button>
+      </form>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <section class="number-axis" aria-labelledby="multiples-heading">
+        <h2 id="multiples-heading">Multiplication sequence of 2</h2>
+        <p>2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22</p>
+        <ol class="multiples-axis" aria-label="Multiples of 2 on a numerical axis">
+          <li>2</li>
+          <li>4</li>
+          <li>6</li>
+          <li>8</li>
+          <li>10</li>
+          <li>12</li>
+          <li>14</li>
+          <li>16</li>
+          <li>18</li>
+          <li>20</li>
+          <li>22</li>
+        </ol>
+      </section>
+
+      <section id="number-axis" class="number-axis" aria-label="Inputs and sum on a number axis" hidden>
+        <h2>Inputs and output</h2>
+        <div class="axis-row" data-point="first">
+          <div class="axis-row-heading"><span>First integer</span><strong class="axis-value"></strong></div>
+          <div class="axis-track"><span class="axis-marker" aria-hidden="true"></span></div>
+        </div>
+        <div class="axis-row" data-point="second">
+          <div class="axis-row-heading"><span>Second integer</span><strong class="axis-value"></strong></div>
+          <div class="axis-track"><span class="axis-marker" aria-hidden="true"></span></div>
+        </div>
+        <div class="axis-row axis-row-output" data-point="sum">
+          <div class="axis-row-heading"><span>Sum</span><strong class="axis-value"></strong></div>
+          <div class="axis-track"><span class="axis-marker" aria-hidden="true"></span></div>
+        </div>
+        <div class="axis-ticks"><span id="axis-min"></span><span id="axis-max"></span></div>
+      </section>
+    </main>
+  </body>
+</html>
